@@ -32,3 +32,63 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+// Dichiaro una variabile da assegnare all'elemento div.items
+const items = document.querySelector('.items');
+
+let obj = 0;
+
+// creo ciclo
+images.forEach((_, i) => {
+
+    // creazione div
+    const item = document.createElement('div');
+
+    // assegnazione classe al div
+    item.classList.add('item',);
+
+    if(i === 0){
+        item.classList.add('active');
+    };
+
+    // creazione foto e dato percorso immagine
+    const foto = document.createElement('img');
+    foto.src = (`./${images[i].image}`);
+
+    // creazione titolo e assegnazione
+    const titolo = document.createElement('h2');
+    titolo.append(images[i].title);
+
+    // creazionje testo e assegnazione
+    const testo = document.createElement('p');
+    testo.append(images[i].text);
+
+    // appesi elementi
+    item.append(foto, titolo, testo);
+
+    // appeso div
+    items.append(item);
+
+});
+
+const allItems = document.querySelectorAll('.item');
+// // variabili delle frecce
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+// eventi al click sulle frecce
+next.addEventListener('click', () => {
+    allItems[obj].classList.remove('active');
+        obj++
+    allItems[obj].classList.add('active');
+// aggiungere uno stop
+});
+
+prev.addEventListener('click', () => {
+    allItems[obj].classList.remove('active');
+        obj--
+    allItems[obj].classList.add('active');
+// aggiungere uno stop
+});
+
+
