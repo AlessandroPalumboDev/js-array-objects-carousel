@@ -36,19 +36,21 @@ const images = [
 // Dichiaro una variabile da assegnare all'elemento div.items
 const items = document.querySelector('.items');
 
-let obj = 0;
 
 // creo ciclo
 images.forEach((_, i) => {
 
     // creazione div
     const item = document.createElement('div');
+    const text = document.createElement('div');
 
     // assegnazione classe al div
     item.classList.add('item',);
+    text.classList.add('text',);
 
-    if(i === 0){
+    if (i === 0) {
         item.classList.add('active');
+        text.classList.add('active');
     };
 
     // creazione foto e dato percorso immagine
@@ -64,7 +66,11 @@ images.forEach((_, i) => {
     testo.append(images[i].text);
 
     // appesi elementi
-    item.append(foto, titolo, testo);
+    item.append(foto);
+
+    text.append(titolo, testo);
+
+    items.append(text);
 
     // appeso div
     items.append(item);
@@ -72,23 +78,50 @@ images.forEach((_, i) => {
 });
 
 const allItems = document.querySelectorAll('.item');
+const allText = document.querySelectorAll('.text');
 // // variabili delle frecce
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
+
+let obj = 0;
+
 // eventi al click sulle frecce
 next.addEventListener('click', () => {
+    console.log(obj);
+
+
     allItems[obj].classList.remove('active');
+    allText[obj].classList.remove('active');
+
+    if (allItems[obj] == allItems.length) {
+        obj = allItems.length
+
+        console.log(obj);
+
+    }
+    else {
         obj++
+    };
+
+    console.log(obj);
+
+
+
+
+
+    allText[obj].classList.add('active');
     allItems[obj].classList.add('active');
-// aggiungere uno stop
+    // aggiungere uno stop
 });
 
 prev.addEventListener('click', () => {
     allItems[obj].classList.remove('active');
-        obj--
+    allText[obj].classList.remove('active');
+    obj--
     allItems[obj].classList.add('active');
-// aggiungere uno stop
+    allText[obj].classList.add('active');
+    // aggiungere uno stop
 });
 
 

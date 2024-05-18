@@ -25,7 +25,7 @@ BONUS 3:
 Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
 - MILESTONE O
-    - A nalizzo l'html statico
+    - Analizzo l'html statico
 
 - MILESTONE 1
     - Dichiaro una variabile da assegnare all'elemento div.items per l'inserimento di un div 'item' con al suo interno immagine, titolo e testo 
