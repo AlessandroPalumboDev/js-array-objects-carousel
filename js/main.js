@@ -77,8 +77,10 @@ images.forEach((_, i) => {
 
 });
 
+// Con querySelectorAll sulla classe item creo un array degli elementi inseriti
 const allItems = document.querySelectorAll('.item');
 const allText = document.querySelectorAll('.text');
+
 // // variabili delle frecce
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
@@ -87,41 +89,39 @@ const next = document.querySelector('.next');
 let obj = 0;
 
 // eventi al click sulle frecce
+
+// freccia di prossima immagine
 next.addEventListener('click', () => {
-    console.log(obj);
 
-
+    // rendo gli elementi presenti non visibili sfruttando la classe di css
     allItems[obj].classList.remove('active');
     allText[obj].classList.remove('active');
 
-    if (allItems[obj] == allItems.length) {
-        obj = allItems.length
+    // obj che identifica quali elementi vengono cambiati al click
+    if (obj < allItems.length - 1) {
+        obj++;
+      } else {
+        obj = 0;
+      }
 
-        console.log(obj);
-
-    }
-    else {
-        obj++
-    };
-
-    console.log(obj);
-
-
-
-
-
+    // rendo i nuovi elementi visibili sfruttando la classe di css
     allText[obj].classList.add('active');
     allItems[obj].classList.add('active');
-    // aggiungere uno stop
 });
 
+// freccia di immagine precedente
 prev.addEventListener('click', () => {
     allItems[obj].classList.remove('active');
     allText[obj].classList.remove('active');
-    obj--
-    allItems[obj].classList.add('active');
+
+    if (obj > 0) {
+        obj--;
+      } else {
+        obj = allItems.length - 1;
+      }    
+    
+      allItems[obj].classList.add('active');
     allText[obj].classList.add('active');
-    // aggiungere uno stop
 });
 
 

@@ -36,4 +36,7 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
     - Definisco le variabili delle frecce richiamandole tramite la loro classe
 
     - Aggiungo evento al click sulle frecce che rimuova la classe 'active' sull'elemento attuale e la aggiunga a un altro elemento seguendo l'ordine degli elementi all'interno dell'array
+
+- MILESTONE 2
+    - Aggiungo if con condizioni per creare  **ciclo infinito**
     
